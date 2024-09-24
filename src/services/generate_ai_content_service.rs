@@ -21,25 +21,22 @@ struct ApiResponse {
     candidates: Vec<Candidate>,
 }
 
-pub async fn execute(prompt: &str) -> Result<String, Box<dyn std::error::Error>> {
+pub async fn execute(prompt: &str, api_key: &str) -> Result<String, Box<dyn std::error::Error>> {
     let contents = vec![HashMap::from([(
         "parts".to_string(),
-        vec![HashMap::from([("text".to_string(), prompt)])],
+        vec![HashMap::from([("text".to_string(), prompt.trim())])],
     )])];
 
     let map = HashMap::from([("contents".to_string(), contents)]);
 
-    const API_KEY: &str = "";
-
     let client = reqwest::Client::new();
-    let response = client
-        .post(format!(
+
+    let url = format!(
             "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key={}",
-            API_KEY
-        ))
-        .json(&map)
-        .send()
-        .await?;
+        &api_key.trim()
+        );
+
+    let response = client.post(url).json(&map).send().await?;
 
     if response.status().is_success() {
         let api_response: ApiResponse = response.json().await?;
