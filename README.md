@@ -43,6 +43,11 @@ To install the application on your Arch Linux system, navigate to the project di
 makepkg -si
 ```
 
+After installation, run:
+```bash
+gemini-cli
+```
+
 
 ![Demonstration](https://i.imgur.com/mbVSo4S.png)
 
