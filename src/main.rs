@@ -10,7 +10,7 @@ use std::io::prelude::*;
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("Welcome to Gemini CLI");
-    println!("To exit type quit()");
+    println!("To exit type 'quit()'");
 
     let mut api_key = String::new();
 
@@ -27,7 +27,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         api_key_file.write_all(api_key.as_bytes())?;
     }
 
-    println!("Type remove_api_key() to remove the stored API key.");
+    println!("Type 'remove_api_key()' to remove the stored API key.");
 
     println!("Please enter something below:");
 
@@ -45,6 +45,8 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
             println!("...");
             break;
         }
+
+        println!("...");
 
         let response = generate_ai_content_service::execute(&prompt, &api_key).await?;
 
