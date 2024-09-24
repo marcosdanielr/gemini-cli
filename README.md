@@ -37,10 +37,20 @@ Execute the application using:
 cargo run
 ```
 
-### Installation
+### Installation on ArchLinux
 To install the application on your Arch Linux system, navigate to the project directory (cd gemini-cli) and run:
 ```bash
 makepkg -si
+```
+
+Using yay:
+```bash
+yay -S gemini-cli
+```
+
+Using paru:
+```bash
+paru -S gemini-cli
 ```
 
 After installation, run:
