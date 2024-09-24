@@ -37,6 +37,13 @@ Execute the application using:
 cargo run
 ```
 
+### Installation
+To install the application on your Arch Linux system, navigate to the project directory (cd gemini-cli) and run:
+```bash
+makepkg -si
+```
+
+
 ![Demonstration](https://i.imgur.com/mbVSo4S.png)
 
 This will start the application. Enjoy!  
