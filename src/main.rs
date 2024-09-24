@@ -14,14 +14,13 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
         io::stdin().read_line(&mut prompt).unwrap();
 
-        let prompt = prompt.trim();
-        if prompt.eq_ignore_ascii_case("quit()") {
+        if prompt.trim().eq_ignore_ascii_case("quit()") {
             break;
         }
 
         println!("...");
 
-        let response = generate_ai_content_service::execute(prompt).await?;
+        let response = generate_ai_content_service::execute(prompt.trim()).await?;
 
         println!("{}", response);
     }
