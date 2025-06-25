@@ -1,3 +1,5 @@
+> ⚠️ **This project is archived.** We recommend using the official Google CLI tool: [`gemini-cli`](https://github.com/google-gemini/gemini-cli), which provides native support for the Gemini model with full multimodal capabilities and better integration with the Google AI ecosystem.
+
 # 🤖 Gemini CLI 🦀
 
 Welcome to my Rust project! Follow the instructions below to get started.
